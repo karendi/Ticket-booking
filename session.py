@@ -45,7 +45,7 @@ def send_ticket(email , ticket_no):
     for row in query:
         ticket_number = str(row.Ticket_No)
         event = (row.Event)
-        message = "\nThis is your ticket for event with id: {0}.The ticket number is {1}".format(event, ticket_number)
+        message = "\nThis is your ticket for the event with id: {0}.The ticket number is {1}".format(event, ticket_number)
 
         #import pdb; pdb.set_trace()
         server = smtplib.SMTP('smtp.gmail.com' ,587) #create an smtp object
