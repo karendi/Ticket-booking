@@ -79,9 +79,10 @@ class Event(cmd.Cmd):
         Event = ManipulateEvent.list_events(self)
         print("\t")
         print("\t Event Name".ljust(20) + "Month".ljust(15) + "Venue".ljust(15) +"Event_id".ljust(15))
+        print("#" * 70)
         print("\t")
         for a in Event:
-            print("\t" + a[0].ljust(15) + a[1].ljust(15) + a[2].ljust(15) +str(a[3]).ljust(15))
+            print("\t" + a[0].ljust(15) + a[1].ljust(15) + a[2].ljust(30) +str(a[3]).ljust(15))
 
 
     # this method is responsible for creating a new event
@@ -92,6 +93,7 @@ class Event(cmd.Cmd):
         Accepted_months = ["January" , "February" , "March" ,
          "April" ,"May" , "June" ,"July" , "August" ,"September" ,
           "October" ,"November","December"]
+
         name = arg['<event_name>']
         month = arg['<month>']
         venue = arg['<venue>']
@@ -140,7 +142,15 @@ class Event(cmd.Cmd):
     @docopt_cmd
     def do_ticket_list(self , arg):
         """Usage: ticket_list"""
-        print(ManipulateTicket.list_tickets(self))
+        Ticket = ManipulateTicket.list_tickets(self)
+        print("\t")
+        print("\t Ticket_Number".ljust(20) + "Event_ID".ljust(15) )
+        print("#" * 70)
+        print("\t")
+        for a in Ticket:
+            print("\t" + str(a[0]).ljust(15) + str(a[1]).ljust(20) )
+
+
 
 
 
